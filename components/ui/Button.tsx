@@ -1,11 +1,10 @@
 'use client';
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, HTMLMotionProps } from 'framer-motion';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<HTMLMotionProps<'button'>, 'onDrag' | 'onDragEnd' | 'onDragStart'> {
   variant?: 'primary' | 'secondary' | 'outline' | 'gold';
   size?: 'sm' | 'md' | 'lg';
-  asChild?: boolean;
 }
 
 export default function Button({
@@ -13,7 +12,6 @@ export default function Button({
   variant = 'primary',
   size = 'md',
   className = '',
-  asChild = false,
   ...props
 }: ButtonProps) {
   const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed';
@@ -31,16 +29,14 @@ export default function Button({
     lg: 'px-8 py-4 text-base',
   };
 
-  const Component = asChild ? motion.button : motion.button;
-
   return (
-    <Component
+    <motion.button
       whileHover={{ scale: 1.02 }}
       whileTap={{ scale: 0.98 }}
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {children}
-    </Component>
+    </motion.button>
   );
 }

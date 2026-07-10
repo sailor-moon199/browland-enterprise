@@ -5,8 +5,7 @@ import {
   Mail,
   MapPin,
   Globe,
-  ArrowRight,
-  Github
+  ArrowRight
 } from 'lucide-react';
 
 const quickLinks = [

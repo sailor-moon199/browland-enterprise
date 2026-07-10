@@ -2,25 +2,81 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1f2937;
+  --browland-blue: #1e40af;
+  --browland-gold: #d4af37;
+  --browland-light: #60a5fa;
+  --browland-dark: #1f2937;
+  --browland-gray: #4b5563;
+  --browland-light-gray: #f3f4f6;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  
+  /* Browland Brand Colors */
+  --color-browland-blue: var(--browland-blue);
+  --color-browland-gold: var(--browland-gold);
+  --color-browland-light: var(--browland-light);
+  --color-browland-dark: var(--browland-dark);
+  --color-browland-gray: var(--browland-gray);
+  --color-browland-light-gray: var(--browland-light-gray);
+  
+  /* Font Configuration */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono);
+  
+  /* Shadows for glassmorphism */
+  --shadow-glass: 0 8px 32px 0 rgba(30, 64, 175, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Glassmorphism utility */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--browland-light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--browland-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--browland-gold);
+}
+
+/* Selection color */
+::selection {
+  background: var(--browland-gold);
+  color: white;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--browland-blue);
+  outline-offset: 2px;
 }

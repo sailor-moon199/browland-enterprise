@@ -1,23 +1,18 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const browlandLogo = '/browland-assets/browland-logo.JPG';
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
   { name: 'Services', href: '/services' },
-  { name: 'Software Products', href: '/products' },
-  { name: 'AI Solutions', href: '/ai-solutions' },
-  { name: 'Training Academy', href: '/academy' },
-  { name: 'Consulting', href: '/consulting' },
-  { name: 'Industries', href: '/industries' },
-  { name: 'Portfolio', href: '/portfolio' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Careers', href: '/careers' },
+  { name: 'Products', href: '/products' },
+  { name: 'Training', href: '/academy' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -44,23 +39,20 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-browland-blue to-browland-light rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-xl">B</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-xl text-browland-dark leading-tight">
-                Browland
-              </span>
-              <span className="text-xs text-browland-gray font-medium tracking-wider">
-                TECHNOLOGIES
-              </span>
-            </div>
+          <Link href="/" className="flex shrink-0 items-center">
+            <Image
+              src={browlandLogo}
+              alt="Browland Technologies"
+              priority
+              width={200}
+              height={80}
+              className="block h-10 w-auto object-contain sm:h-12"
+            />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navItems.slice(0, 7).map((item) => (
+            {navItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -69,22 +61,6 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <div className="relative group">
-              <button className="flex items-center gap-1 text-browland-gray hover:text-browland-blue font-medium transition-colors text-sm">
-                More <ChevronDown className="w-4 h-4" />
-              </button>
-              <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                {navItems.slice(7).map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="block px-4 py-2 text-sm text-browland-gray hover:text-browland-blue hover:bg-browland-light-gray transition-colors"
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
           </nav>
 
           {/* CTA Buttons */}

@@ -138,19 +138,19 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-browland-gold flex-shrink-0" />
                 <span className="text-gray-400">
-                  +234 XXX XXXX XXX
+                  +234 808 3114 365
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-browland-gold flex-shrink-0" />
                 <span className="text-gray-400">
-                  info@browlandtech.com
+                  info@browlandtechnoliogies.com
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Globe className="w-5 h-5 text-browland-gold flex-shrink-0" />
                 <span className="text-gray-400">
-                  www.browlandtech.com
+                  www.browlandtechnoligies.com
                 </span>
               </li>
             </ul>

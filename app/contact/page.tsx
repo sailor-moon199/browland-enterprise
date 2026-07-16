@@ -99,7 +99,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-browland-dark mb-1">Phone</h3>
-                        <p className="text-browland-gray">+234 xxx xxxx xxx</p>
+                        <p className="text-browland-gray">+234 808 3114 365</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -108,7 +108,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-browland-dark mb-1">Email</h3>
-                        <p className="text-browland-gray">info@browlandtech.com</p>
+                        <p className="text-browland-gray">info@browlandtechnologies.com</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -117,7 +117,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-browland-dark mb-1">Website</h3>
-                        <p className="text-browland-gray">www.browlandtech.com</p>
+                        <p className="text-browland-gray">www.browlandtechnologies.com</p>
                       </div>
                     </div>
                   </div>
